@@ -1,12 +1,14 @@
 module Text.Clapify
     ( clapify
-    , printClap
+    , clapRepl
     ) where
 
 import           Data.List (intercalate)
 
+-- | \\( O(n) \\)
 clapify :: String -> String
 clapify = (++ " 👏") . intercalate " 👏 " . words
 
-printClap :: String -> IO ()
-printClap = putStrLn . clapify
+-- | For use in GHCi
+clapRepl :: String -> IO ()
+clapRepl = putStrLn . clapify
