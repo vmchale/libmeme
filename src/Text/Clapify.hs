@@ -5,4 +5,4 @@ module Text.Clapify
 import           Data.List (intercalate)
 
 clapify :: String -> String
-clapify = (++ "👏") . intercalate "👏" . words
+clapify = (++ " 👏") . intercalate " 👏 " . words
