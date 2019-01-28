@@ -1,13 +1,12 @@
 module Export () where
 
+import           Control.Monad
 import           Foreign.C.String
 import           Text.Clapify
 import           Text.Spongebob
 
 helper :: (String -> String) -> CString -> IO CString
-helper f cStr = do
-    str <- peekCString cStr
-    newCString (f str)
+helper f = newCString <=< fmap f . peekCString
 
 clapify_ :: CString -> IO CString
 clapify_ = helper clapify
