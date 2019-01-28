@@ -1,0 +1,85 @@
+cabal-version: 1.18
+name: libmeme
+version: 0.1.0.0
+license: BSD3
+license-file: LICENSE
+copyright: Copyright: (c) 2018 Vanessa McHale
+maintainer: vanessa.mchale@iohk.io
+author: Vanessa McHale
+synopsis: Efficient meme generation in pure Haskell
+description:
+    libmeme provides a pure Haskell library for inserting the clap emoji between words, as well as facilities to facilitate SpOnGeBoB CaSe
+category: Text
+build-type: Simple
+extra-doc-files: README.md
+                 CHANGELOG.md
+
+source-repository head
+    type: git
+    location: https://github.com/vmchale/libmeme
+
+flag development
+    description:
+        Enable `-Werror`
+    default: False
+    manual: True
+
+library
+    exposed-modules:
+        Text.Clapify
+        Text.Spongebob
+    hs-source-dirs: src
+    default-language: Haskell2010
+    ghc-options: -Wall
+    build-depends:
+        base >=4.4 && <5
+
+    if flag(development)
+        ghc-options: -Werror
+
+    if impl(ghc >=8.0)
+        ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
+                     -Wredundant-constraints -Widentities
+
+    if impl(ghc >=8.4)
+        ghc-options: -Wmissing-export-lists
+
+test-suite libmeme-test
+    type: exitcode-stdio-1.0
+    main-is: Spec.hs
+    hs-source-dirs: test
+    default-language: Haskell2010
+    build-depends:
+        base -any,
+        libmeme -any,
+        hspec -any
+
+    if impl(ghc >=8.0)
+        ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
+                     -Wredundant-constraints -Widentities
+
+    if impl(ghc >=8.4)
+        ghc-options: -Wmissing-export-lists
+
+    if flag(development)
+        ghc-options: -Werror
+
+benchmark libmeme-bench
+    type: exitcode-stdio-1.0
+    main-is: Bench.hs
+    hs-source-dirs: bench
+    default-language: Haskell2010
+    build-depends:
+        base -any,
+        libmeme -any,
+        criterion -any
+
+    if impl(ghc >=8.0)
+        ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
+                     -Wredundant-constraints -Widentities
+
+    if impl(ghc >=8.4)
+        ghc-options: -Wmissing-export-lists
+
+    if flag(development)
+        ghc-options: -Werror
