@@ -1,6 +1,5 @@
-fn clapify(!Strptr1) :<!wrt> Strptr1 =
+fn clapify(!Strptr1) : Strptr1 =
   "ext#clapify_"
 
-fn spongebob_case(!Strptr1) :<!wrt> Strptr1 =
+fn spongebob_case(!Strptr1) : Strptr1 =
   "ext#"
-

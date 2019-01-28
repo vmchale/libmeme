@@ -47,8 +47,12 @@ library
 foreign-library libmeme-hs
     type: native-shared
     hs-source-dirs: foreign-src
-    other-modules: Export
+    other-modules:
+        Export
     default-language: Haskell2010
+    include-dirs: include
+    install-includes:
+        include/libmeme.h
     build-depends:
         base -any,
         libmeme -any
