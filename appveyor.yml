@@ -1,0 +1,13 @@
+---
+
+build: off
+
+before_test:
+  - choco install ghc
+  - choco install cabal
+
+test_script:
+  - refreshenv
+  - cabal new-update
+  - cabal new-build
+  - cabal new-test

@@ -1,0 +1,42 @@
+---
+sudo: false
+language: c
+cache:
+  directories:
+    - $HOME/.cabal
+    - $HOME/.ghc
+addons:
+  apt:
+    packages:
+      - libgmp3-dev
+matrix:
+  include:
+
+    - env: TARGET=x86_64-unkown-linux-gnu
+      addons:
+        apt:
+          update: true
+          sources:
+            - hvr-ghc
+          packages:
+            - ghc-8.6.3
+            - cabal-install-2.4
+
+    - env: TARGET=x86_64-apple-darwin
+      os: osx
+
+before_install:
+  - |
+    if [ `uname` = "Darwin" ]
+    then
+      brew install cabal-install
+      cabal new-update
+    else
+      export PATH=/opt/ghc/bin:$PATH
+      cabal new-update
+    fi
+  - export PATH=$HOME/.cabal/bin:$PATH
+
+script:
+  - cabal new-build
+  - cabal new-test
