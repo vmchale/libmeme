@@ -13,3 +13,4 @@ It also includes support for SpOnGeBoB CaSe.
 * Unicode support
 * Test suite with property tests
 * Benchmarks
+* C bindings
