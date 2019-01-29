@@ -50,9 +50,6 @@ foreign-library meme
     other-modules:
         Export
     default-language: Haskell2010
-    include-dirs: include
-    install-includes:
-        include/meme.h
     build-depends:
         base -any,
         libmeme -any
