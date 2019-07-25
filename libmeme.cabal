@@ -34,7 +34,7 @@ library
     ghc-options: -Wall
     build-depends:
         base >=4.4 && <5,
-        recursion
+        recursion -any
 
     if flag(development)
         ghc-options: -Werror
@@ -52,6 +52,7 @@ foreign-library meme
     other-modules:
         Export
     default-language: Haskell2010
+    ghc-options: -Wall
     build-depends:
         base -any,
         libmeme -any
@@ -75,6 +76,7 @@ test-suite libmeme-test
     main-is: Spec.hs
     hs-source-dirs: test
     default-language: Haskell2010
+    ghc-options: -Wall
     build-depends:
         base -any,
         libmeme -any,
@@ -95,6 +97,7 @@ benchmark libmeme-bench
     main-is: Bench.hs
     hs-source-dirs: bench
     default-language: Haskell2010
+    ghc-options: -Wall
     build-depends:
         base >=4.8,
         libmeme -any,
