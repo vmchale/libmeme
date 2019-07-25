@@ -34,7 +34,7 @@ library
     ghc-options: -Wall
     build-depends:
         base >=4.4 && <5,
-        recursion -any
+        recursion >=0.1.0.1
 
     if flag(development)
         ghc-options: -Werror
