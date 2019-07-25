@@ -28,19 +28,20 @@ library
     exposed-modules:
         Text.Clapify
         Text.Spongebob
+        Text.Expand
     hs-source-dirs: src
     default-language: Haskell2010
     ghc-options: -Wall
     build-depends:
         base >=4.4 && <5
-
+    
     if flag(development)
         ghc-options: -Werror
-
+    
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-
+    
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
 
@@ -54,17 +55,17 @@ foreign-library meme
         base -any,
         libmeme -any
     lib-version-info: 1:0:0
-
+    
     if os(windows)
         options: standalone
-
+    
     if flag(development)
         ghc-options: -Werror
-
+    
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-
+    
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
 
@@ -77,14 +78,14 @@ test-suite libmeme-test
         base -any,
         libmeme -any,
         hspec -any
-
+    
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-
+    
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
-
+    
     if flag(development)
         ghc-options: -Werror
 
@@ -97,13 +98,13 @@ benchmark libmeme-bench
         base >=4.8,
         libmeme -any,
         criterion -any
-
+    
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-
+    
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
-
+    
     if flag(development)
         ghc-options: -Werror
