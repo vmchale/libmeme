@@ -3,8 +3,8 @@ name: libmeme
 version: 0.1.0.0
 license: BSD3
 license-file: LICENSE
-copyright: Copyright: (c) 2018 Vanessa McHale
-maintainer: vanessa.mchale@iohk.io
+copyright: Copyright: (c) 2018-2019 Vanessa McHale
+maintainer: vamchale@gmail.com
 author: Vanessa McHale
 synopsis: Efficient meme generation in pure Haskell
 description:
@@ -34,14 +34,14 @@ library
     ghc-options: -Wall
     build-depends:
         base >=4.4 && <5
-    
+
     if flag(development)
         ghc-options: -Werror
-    
+
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-    
+
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
 
@@ -55,17 +55,17 @@ foreign-library meme
         base -any,
         libmeme -any
     lib-version-info: 1:0:0
-    
+
     if os(windows)
         options: standalone
-    
+
     if flag(development)
         ghc-options: -Werror
-    
+
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-    
+
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
 
@@ -78,14 +78,14 @@ test-suite libmeme-test
         base -any,
         libmeme -any,
         hspec -any
-    
+
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-    
+
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
-    
+
     if flag(development)
         ghc-options: -Werror
 
@@ -98,13 +98,13 @@ benchmark libmeme-bench
         base >=4.8,
         libmeme -any,
         criterion -any
-    
+
     if impl(ghc >=8.0)
         ghc-options: -Wincomplete-uni-patterns -Wincomplete-record-updates
                      -Wredundant-constraints -Widentities
-    
+
     if impl(ghc >=8.4)
         ghc-options: -Wmissing-export-lists
-    
+
     if flag(development)
         ghc-options: -Werror
