@@ -12,5 +12,6 @@ main :: IO ()
 main =
     defaultMain [ bgroup "clapify" (benchStrFunction clapify <$> [10, 100])
                 , bgroup "spongebobCase" (benchStrFunction spongebobCase <$> [10,100])
+                , bgroup "spongebobZygo" (benchStrFunction spongebobZygo <$> [10,100])
                 , bgroup "expand" (benchStrFunction textExpand <$> [10,100])
                 ]

@@ -15,9 +15,13 @@ clapify_ = helper clapify
 spongebob_case :: CString -> IO CString
 spongebob_case = helper spongebobCase
 
+spongebob_zygo :: CString -> IO CString
+spongebob_zygo = helper spongebobZygo
+
 expand_text :: CString -> IO CString
 expand_text = helper textExpand
 
 foreign export ccall clapify_ :: CString -> IO CString
 foreign export ccall spongebob_case :: CString -> IO CString
 foreign export ccall expand_text :: CString -> IO CString
+foreign export ccall spongebob_zygo :: CString -> IO CString
