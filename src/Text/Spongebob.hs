@@ -14,6 +14,7 @@ spongebobZygo :: String -> String
 spongebobZygo = zygo a pa
     where a :: ListF Char Bool -> Bool
           a Nil        = False
+          a (Cons ' ' b) = b
           a (Cons _ b) = not b
           pa :: ListF Char (Bool, String) -> String
           pa Nil                 = ""

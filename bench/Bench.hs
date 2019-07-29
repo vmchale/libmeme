@@ -10,8 +10,10 @@ benchStrFunction f n = bench (show n) $ nf f (replicate n 'a')
 
 main :: IO ()
 main =
-    defaultMain [ bgroup "clapify" (benchStrFunction clapify <$> [10, 100])
-                , bgroup "spongebobCase" (benchStrFunction spongebobCase <$> [10,100])
-                , bgroup "spongebobZygo" (benchStrFunction spongebobZygo <$> [10,100])
-                , bgroup "expand" (benchStrFunction textExpand <$> [10,100])
+    defaultMain [ bgroup "clapify" (benchStrFunction clapify <$> powers)
+                , bgroup "spongebobCase" (benchStrFunction spongebobCase <$> powers)
+                , bgroup "spongebobZygo" (benchStrFunction spongebobZygo <$> powers)
+                , bgroup "expand" (benchStrFunction textExpand <$> powers)
                 ]
+
+    where powers = [ 10^i | i <- [(1::Int)..2] ]
