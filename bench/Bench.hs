@@ -14,6 +14,9 @@ main =
                 , bgroup "spongebobCase" (benchStrFunction spongebobCase <$> powers)
                 , bgroup "spongebobZygo" (benchStrFunction spongebobZygo <$> powers)
                 , bgroup "expand" (benchStrFunction textExpand <$> powers)
+                , bgroup "toFraktur" (benchStrFunction toFraktur <$> powers)
+                , bgroup "toScript" (benchStrFunction toScript <$> powers)
+                , bgroup "toBlackboardBold" (benchStrFunction toBlackboardBold <$> powers)
                 ]
 
     where powers = [ 10^i | i <- [(1::Int)..2] ]
