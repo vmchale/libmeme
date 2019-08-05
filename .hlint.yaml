@@ -1,3 +1,4 @@
 ---
 - ignore: {name: Use camelCase}
 - ignore: {name: Use String}
+- ignore: {name: Redundant lambda}
