@@ -13,8 +13,12 @@ spongebobCase = zipWith ($) (cycle [toUpper, toLower])
 spongebobZygo :: String -> String
 spongebobZygo = zygo a pa
     where a :: ListF Char Bool -> Bool
-          a Nil        = False
-          a (Cons _ b) = not b
+          a Nil           = False
+          a (Cons ' ' b)  = b
+          a (Cons ',' b)  = b
+          a (Cons '-' b)  = b
+          a (Cons '\'' b) = b
+          a (Cons _ b)    = not b
           pa :: ListF Char (Bool, String) -> String
           pa Nil                 = ""
           pa (Cons c (True, s))  = toUpper c : s
