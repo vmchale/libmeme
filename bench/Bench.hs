@@ -2,6 +2,7 @@ module Main (main) where
 
 import           Criterion.Main
 import           Text.Clapify
+import           Text.Convert
 import           Text.Expand
 import           Text.Spongebob
 
