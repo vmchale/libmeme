@@ -29,12 +29,19 @@ library
         Text.Clapify
         Text.Spongebob
         Text.Expand
+        Text.Convert
     hs-source-dirs: src
+    other-modules:
+        Text.Convert.Fraktur
+        Text.Convert.BlackboardBold
+        Text.Convert.Script
+        Text.Convert.Common
     default-language: Haskell2010
     ghc-options: -Wall
     build-depends:
         base >=4.4 && <5,
-        recursion >=0.1.0.1
+        recursion >=0.1.0.1,
+        containers -any
 
     if flag(development)
         ghc-options: -Werror
