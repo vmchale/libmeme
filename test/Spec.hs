@@ -1,6 +1,7 @@
 import           Data.Foldable         (traverse_)
 import           Test.Hspec
 import           Test.Hspec.QuickCheck
+import           Text.Convert
 import           Text.Spongebob
 
 isIdempotent :: (String -> String) -> (String -> Bool)
@@ -13,4 +14,4 @@ main :: IO ()
 main = hspec $
     describe "spongebob" $
         traverse_ idempotentProp
-            [spongebobCase, spongebobZygo]
+            [spongebobCase, spongebobZygo, toFraktur, toScript, toBlackboardBold]
