@@ -11,5 +11,6 @@ idempotentProp = parallel . prop "should be idempotent" . isIdempotent
 
 main :: IO ()
 main = hspec $
-    describe "spongebob" $ traverse_ idempotentProp
-        [spongebobCase, spongebobZygo]
+    describe "spongebob" $
+        traverse_ idempotentProp
+            [spongebobCase, spongebobZygo]
