@@ -18,6 +18,7 @@ main =
                 , bgroup "toFraktur" (benchStrFunction toFraktur <$> powers)
                 , bgroup "toScript" (benchStrFunction toScript <$> powers)
                 , bgroup "toBlackboardBold" (benchStrFunction toBlackboardBold <$> powers)
+                , bgroup "toWide" (benchStrFunction toWide <$> powers)
                 ]
 
     where powers = [ 10^i | i <- [(1::Int)..2] ]

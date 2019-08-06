@@ -36,6 +36,7 @@ library
         Text.Convert.BlackboardBold
         Text.Convert.Script
         Text.Convert.Common
+        Text.Convert.Wide
     default-language: Haskell2010
     ghc-options: -Wall
     build-depends:
