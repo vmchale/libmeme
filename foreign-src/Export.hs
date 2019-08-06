@@ -34,6 +34,12 @@ to_script = helperW toScript
 to_blackboard_bold :: CWString -> IO CWString
 to_blackboard_bold = helperW toBlackboardBold
 
+to_wide :: CWString -> IO CWString
+to_wide = helperW toWide
+
+to_monospace :: CWString -> IO CWString
+to_monospace = helperW toMonospace
+
 foreign export ccall clapify_ :: CWString -> IO CWString
 foreign export ccall spongebob_case :: CString -> IO CString
 foreign export ccall expand_text :: CString -> IO CString
@@ -41,3 +47,5 @@ foreign export ccall spongebob_zygo :: CString -> IO CString
 foreign export ccall to_fraktur :: CWString -> IO CWString
 foreign export ccall to_script :: CWString -> IO CWString
 foreign export ccall to_blackboard_bold :: CWString -> IO CWString
+foreign export ccall to_wide :: CWString -> IO CWString
+foreign export ccall to_monospace :: CWString -> IO CWString
