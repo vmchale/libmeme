@@ -13,8 +13,8 @@ helper f = newCString <=< fmap f . peekCString
 helperW :: (String -> String) -> CWString -> IO CWString
 helperW f = newCWString <=< fmap f . peekCWString
 
-clapify_ :: CString -> IO CString
-clapify_ = helper clapify
+clapify_ :: CWString -> IO CWString
+clapify_ = helperW clapify
 
 spongebob_case :: CString -> IO CString
 spongebob_case = helper spongebobCase
@@ -34,7 +34,7 @@ to_script = helperW toScript
 to_blackboard_bold :: CWString -> IO CWString
 to_blackboard_bold = helperW toBlackboardBold
 
-foreign export ccall clapify_ :: CString -> IO CString
+foreign export ccall clapify_ :: CWString -> IO CWString
 foreign export ccall spongebob_case :: CString -> IO CString
 foreign export ccall expand_text :: CString -> IO CString
 foreign export ccall spongebob_zygo :: CString -> IO CString
