@@ -16,6 +16,12 @@ conjugate f = \str -> reverse (f (reverse str)) == f str
 conjugateProp :: (String -> String) -> SpecWith ()
 conjugateProp = parallel . prop "reverse . f . reverse ≡ f" . conjugate
 
+homoConcat :: (String -> String) -> String -> String -> Bool
+homoConcat f = \str0 str1 -> f (str0 ++ str1) == f str0 ++ f str1
+
+homoConcatProp :: (String -> String) -> SpecWith ()
+homoConcatProp = parallel . prop "should be a homomorphism under concatenation" . homoConcat
+
 main :: IO ()
 main = hspec $ do
     describe "idempotency" $
@@ -23,6 +29,9 @@ main = hspec $ do
             [spongebobCase, spongebobZygo, toFraktur, toScript, toBlackboardBold]
     describe "conjugation" $
         traverse_ conjugateProp
+            [toFraktur, toScript, toBlackboardBold]
+    describe "homomorphism (concatenation)" $
+        traverse_ homoConcatProp
             [toFraktur, toScript, toBlackboardBold]
     describe "toFraktur" $
         it "should handle a simple title" $
