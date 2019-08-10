@@ -4,9 +4,10 @@
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/vmchale/libmeme?svg=true)](https://ci.appveyor.com/project/vmchale/libmeme)
 ![](https://img.shields.io/github/languages/count/vmchale/libmeme.svg)
 
-libmeme is a Haskell library to insert the 👏 emoji between words.
+libmeme is a Haskell library to convert text.
 
-It also includes support for SpOnGeBoB CaSe.
+You can see a web-based demonstration
+[here](http://vmchale.com/text-converter/index.html).
 
 # Features
 
