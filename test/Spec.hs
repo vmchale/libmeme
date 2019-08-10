@@ -36,9 +36,3 @@ main = hspec $ do
     describe "homomorphism (concatenation)" $
         traverse_ homoConcatProp
             conversions
-    describe "toFraktur" $
-        it "should handle a simple title" $
-            toFraktur "Can Programming Be Liberated from the von Neumann Style" `shouldBe` "𝕮𝖆𝖓 𝕻𝖗𝖔𝖌𝖗𝖆𝖒𝖒𝖎𝖓𝖌 𝕭𝖊 𝕷𝖎𝖇𝖊𝖗𝖆𝖙𝖊𝖉 𝖋𝖗𝖔𝖒 𝖙𝖍𝖊 𝖛𝖔𝖓 𝕹𝖊𝖚𝖒𝖆𝖓𝖓 𝕾𝖙𝖞𝖑𝖊"
-    describe "toBlackboardBold" $
-        it "should handle a simple title" $
-            toBlackboardBold "Fahrenheit 451" `shouldBe` "𝔽𝕒𝕙𝕣𝕖𝕟𝕙𝕖𝕚𝕥 𝟜𝟝𝟙"

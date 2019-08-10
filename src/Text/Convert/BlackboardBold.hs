@@ -17,5 +17,8 @@ blackboardBoldTable = M.fromList $
     zip (alphabet ++ digits) (uppercase ++ bbLowercase ++ bbDigits)
 
 -- | \\( O(n) \\)
+--
+-- >>> putStrLn $ toBlackboardBold "Fahrenheit 451"
+-- 𝔽𝕒𝕙𝕣𝕖𝕟𝕙𝕖𝕚𝕥 𝟜𝟝𝟙
 toBlackboardBold :: String -> String
 toBlackboardBold = fmap (withCharTable blackboardBoldTable)

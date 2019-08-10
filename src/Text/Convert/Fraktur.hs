@@ -14,5 +14,8 @@ frakturTable = M.fromList $
     zip alphabet (uppercase ++ frakturLowercase)
 
 -- | \\( O(n) \\)
+--
+-- >>> putStrLn $ toFraktur "Can Programming Be Liberated from the von Neumann Style"
+-- 𝕮𝖆𝖓 𝕻𝖗𝖔𝖌𝖗𝖆𝖒𝖒𝖎𝖓𝖌 𝕭𝖊 𝕷𝖎𝖇𝖊𝖗𝖆𝖙𝖊𝖉 𝖋𝖗𝖔𝖒 𝖙𝖍𝖊 𝖛𝖔𝖓 𝕹𝖊𝖚𝖒𝖆𝖓𝖓 𝕾𝖙𝖞𝖑𝖊
 toFraktur :: String -> String
 toFraktur = fmap (withCharTable frakturTable)
