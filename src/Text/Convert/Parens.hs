@@ -6,12 +6,12 @@ import           Text.Convert.Common
 uppercase :: [Char]
 uppercase = ['🄐','🄑','🄒','🄓','🄔','🄕','🄖','🄗','🄘','🄙','🄚','🄛','🄜','🄝','🄞','🄟','🄠','🄡','🄣','🄤','🄥','🄦','🄧','🄨','🄩']
 
-scriptLowercase :: [Char]
-scriptLowercase = ['⒜','⒝','⒞','⒟','⒠','⒡','⒢','⒣','⒞','⒤','⒥','⒦','⒧','⒨','⒩','⒪','⒫','⒬','⒭','⒯','⒮','⒯','⒰','⒱','⒲','⒳','⒴','⒵']
+parensLowercase :: [Char]
+parensLowercase = ['⒜','⒝','⒞','⒟','⒠','⒡','⒢','⒣','⒞','⒤','⒥','⒦','⒧','⒨','⒩','⒪','⒫','⒬','⒭','⒯','⒮','⒯','⒰','⒱','⒲','⒳','⒴','⒵']
 
 scriptTable :: M.Map Char Char
 scriptTable = M.fromList $
-    zip alphabet (uppercase ++ scriptLowercase)
+    zip alphabet (uppercase ++ parensLowercase)
 
 -- | \\( O(n) \\)
 toParens :: String -> String
