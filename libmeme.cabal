@@ -38,8 +38,6 @@ library
         Text.Convert.Common
         Text.Convert.Wide
         Text.Convert.Monospace
-        Text.Convert.Bubble
-        Text.Convert.Parens
         Text.Convert.Smallcaps
     default-language: Haskell2010
     ghc-options: -Wall

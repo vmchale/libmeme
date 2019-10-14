@@ -23,7 +23,7 @@ homoConcatProp :: (String -> String) -> SpecWith ()
 homoConcatProp = parallel . prop "should be a homomorphism under concatenation" . homoConcat
 
 conversions :: [String -> String]
-conversions = [toFraktur, toScript, toBlackboardBold, toWide, toMonospace, toBubble, toParens, toSmallcaps]
+conversions = [toFraktur, toScript, toBlackboardBold, toWide, toMonospace]
 
 main :: IO ()
 main = hspec $ do
