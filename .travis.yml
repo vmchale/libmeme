@@ -30,14 +30,14 @@ before_install:
     if [ `uname` = "Darwin" ]
     then
       brew install cabal-install
-      cabal new-update
+      cabal update
     else
       export PATH=/opt/ghc/bin:$PATH
-      cabal new-update
+      cabal update
     fi
   - export PATH=$HOME/.cabal/bin:$PATH
 
 script:
-  - cabal new-build
-  - cabal new-test
+  - cabal build
+  - cabal test
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s src foreign-src test bench
