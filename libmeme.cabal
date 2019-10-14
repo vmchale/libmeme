@@ -38,6 +38,7 @@ library
         Text.Convert.Common
         Text.Convert.Wide
         Text.Convert.Monospace
+        Text.Convert.Bubble
     default-language: Haskell2010
     ghc-options: -Wall
     build-depends:
